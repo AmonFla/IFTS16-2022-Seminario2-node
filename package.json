@@ -1,0 +1,25 @@
+{
+  "name": "ifts16-2022-seminario2-node",
+  "version": "1.0.0",
+  "description": "reat api para un blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmonFla/IFTS16-2022-Seminario2-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmonFla/IFTS16-2022-Seminario2-node/issues"
+  },
+  "homepage": "https://github.com/AmonFla/IFTS16-2022-Seminario2-node#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "http": "^0.0.1-security"
+  }
+}
