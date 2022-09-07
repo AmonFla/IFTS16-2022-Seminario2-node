@@ -3,7 +3,7 @@ const guardarCategoria = (req, res) => {
 }
  
 const obtenerTodas = (req, res) => {
-  res.status(200).json({message : 'get'})
+  res.status(200).json({message : 'get all category'})
  }
 
 const obtenerUna = (req, res) => {
