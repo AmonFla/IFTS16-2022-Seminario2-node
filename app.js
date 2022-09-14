@@ -5,6 +5,7 @@ const categoriasRouter = require('./endpoints/categorias')
 const etiquetasRouter = require('./endpoints/etiquetas')
 
 const app = express()
+app.use(express.json())
 
 app.get('/keepalive', keepalive)
 

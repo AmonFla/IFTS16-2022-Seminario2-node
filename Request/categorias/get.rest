@@ -1,1 +1,4 @@
 GET http://localhost:4000/categorias
+
+###
+GET http://localhost:4000/categorias/1
