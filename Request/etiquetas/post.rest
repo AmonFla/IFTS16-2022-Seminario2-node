@@ -1,0 +1,6 @@
+POST http://localhost:4000/etiquetas
+Content-Type: application/json
+
+{
+  "nombre": "tag 3"
+}

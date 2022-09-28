@@ -17,7 +17,7 @@ const connectToDb = async () => {
     await sequelize.authenticate() 
     console.log('Connected to DDBB')
   }catch(error) {
-    console.log('Fail to connecto to DDBB', error)
+    console.log('Fail to connect to DDBB', error)
     return process.exit(1)
   }
   return null
