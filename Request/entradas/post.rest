@@ -1,1 +1,19 @@
-POST http://localhost:4000/etiquetas
+POST http://localhost:4000/entradas
+Content-Type: application/json
+
+{
+  "titulo":"primer post",
+  "contenido" :"este es el contenido",
+  "fechaPub" : "2022-09-15",
+  "categoria" : {
+    "id":1,
+    "nombre" : "categoria"
+  },
+  "tags": [{
+    "id":"1",
+    "nombre" : "tag1"
+  },{
+    "nombre": "nueva etiqueta"
+  }]
+  
+}
