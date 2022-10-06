@@ -23,10 +23,37 @@ const getOne = async(id) => {
  }
 
 const updateOne = async (id, datos) => {
-  const data = await getOne(id);
-  data.nombre = datos.nombre;
-  data.save()
-  return data
+  const data = await getOne(id); 
+  data.titulo = datos.titulo;
+  data.contenido = datos.contenido;
+
+  
+  if (datos.categoria) {
+    let categoria = {}
+    if (datos.categoria.id) {
+      categoria = await Categoria.findByPk(datos.categoria.id)    
+    } else {
+       categoria = await Categoria.create(datos.categoria)
+    }
+    data.categoriaId = categoria.id
+  }
+
+  /* BORRAR PRIMERO LAS RELACIONES EXISTENTES CON ETIQUETAS */
+  await data.etiquetas.map(async (et) => await data.removeEtiquetas(et))
+
+
+  await datos.tags.map(async (etiqueta) => {  
+    if (etiqueta.id) {
+      const tag = await Etiquetas.findByPk(etiqueta.id)
+      await data.addEtiquetas(tag)
+    } else { 
+      const tag = await Etiquetas.create(etiqueta)
+      await data.addEtiquetas(tag)
+    } 
+  })
+
+  await data.save()
+  return data;
  }
 
 const deleteOne = async(id) => { 

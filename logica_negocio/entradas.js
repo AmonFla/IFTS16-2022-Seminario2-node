@@ -16,8 +16,9 @@ const obtenerUna = async(req, res) => {
   res.status(200).json(data)
  }
 
-const actualizarEntrada = (req, res) => {
-  res.status(200).json({message : 'put'})
+const actualizarEntrada = async (req, res) => {
+  const data = await DAO.updateOne(req.params.eid,req.body)
+  res.status(200).json(data)
  }
 
 const borrarEntrada =(req, res) => {

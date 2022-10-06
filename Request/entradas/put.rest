@@ -1,0 +1,22 @@
+PUT http://localhost:4000/entradas/18
+Content-Type: application/json
+
+{
+  "titulo":"primer postwew",
+  "contenido" :"este es el contenidoewew",
+  "fechaPub" : "2022-09-15",
+  "categoria" : {
+    "id":1,
+    "nombre" : "categoria"
+  },
+  "tags": [{
+    "id":"6",
+    "nombre" : "tag1"
+  },{
+    "nombre": "nueva etiqueta232"
+  }]
+  
+}
+
+###
+GET http://localhost:4000/entradas/18

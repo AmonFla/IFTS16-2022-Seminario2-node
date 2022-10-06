@@ -1,5 +1,16 @@
+# @name login
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username":"admin", 
+    "password":"123456" 
+}
+
+###
 POST http://localhost:4000/entradas
 Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
 
 {
   "titulo":"primer post",
@@ -17,3 +28,6 @@ Content-Type: application/json
   }]
   
 }
+
+###
+GET http://localhost:4000/entradas/18
