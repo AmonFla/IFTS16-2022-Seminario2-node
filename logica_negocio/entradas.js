@@ -2,7 +2,9 @@ const { DATE } = require('sequelize');
 const DAO = require('../acceso_datos/entradas')
 
 const guardarEntrada = async (req, res) => {
-  const data = await DAO.saveOne(req.body);
+  const decodedToken = req.decodedToken
+  console.log(decodedToken)
+  const data = await DAO.saveOne(req.body, decodedToken.id);
   res.status(200).json(data)
 }
  
