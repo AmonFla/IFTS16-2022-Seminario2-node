@@ -23,7 +23,7 @@ app.use('/login', loginRouter)
 // app.use(middleware.validateToken) 
 
 //CASO 2 - SOLO TODO LOS ENDPOINT DE ETRADA LO NECESITEN
-app.use('/entradas', middleware.validateToken, entradasRouter)
+app.use('/entradas',  entradasRouter)
 
 app.use('/categorias', categoriasRouter)
 app.use('/etiquetas', etiquetasRouter)

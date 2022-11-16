@@ -6,7 +6,7 @@ const sequelize = new Sequelize(
   'apiuser',
   'Api@user123', {
     host: 'localhost',
-    port: 3307,
+    port: 3308,
     dialect: 'mysql'
   }
 )
