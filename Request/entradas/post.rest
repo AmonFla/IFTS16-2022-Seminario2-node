@@ -13,7 +13,7 @@ Content-Type: application/json
 Authorization: Bearer {{ login.response.body.token }}
 
 {
-  "titulo":"primer post",
+  "titulo":"segundo post",
   "contenido" :"este es el contenido",
   "fechaPub" : "2022-09-15",
   "categoria" : {

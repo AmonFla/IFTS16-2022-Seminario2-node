@@ -78,15 +78,18 @@ const saveOne = async (datos) => {
     data.categoriaId = categoria.id
   }
 
-  datos.tags.map(async (etiqueta) => {  
-    if (etiqueta.id) {
-      const tag = await Etiquetas.findByPk(etiqueta.id)
-      data.addEtiquetas(tag)
-    } else { 
-      const tag = await Etiquetas.create(etiqueta)
-      data.addEtiquetas(tag)
-    } 
-  })
+  if (datos.tags) {
+    datos.tags.map(async (etiqueta) => {
+      if (etiqueta.id) {
+        const tag = await Etiquetas.findByPk(etiqueta.id)
+        data.addEtiquetas(tag)
+      } else {
+        const tag = await Etiquetas.create(etiqueta)
+        data.addEtiquetas(tag)
+      }
+    })
+  }
+    
   data.save()
   return data
 }

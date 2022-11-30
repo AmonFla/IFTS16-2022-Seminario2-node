@@ -11,7 +11,7 @@ const login = (req, res) => {
       id: 123,
       role: 'admin'
     }
-    const token = jwt.sign(tokenData, process.env.JWTSECRET, {expiresIn: '1s'})
+    const token = jwt.sign(tokenData, process.env.JWTSECRET, {expiresIn: '50m'})
     res.status(200).send({token, name: 'fulanito de tal'})
 
   } else { 
